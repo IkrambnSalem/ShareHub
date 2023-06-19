@@ -1,0 +1,88 @@
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <h2>File Upload</h2>
+                    <ul class="breadcrumb padding-0">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i></a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Forms</a></li>
+                        <li class="breadcrumb-item active">File Upload</li>
+                    </ul>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="input-group m-b-0">                
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-addon">
+                            <i class="zmdi zmdi-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Basic Validation -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong>Basic</strong> Validation</h2>
+                   
+                    </div>
+                    <div class="body">
+                        <form id="form_validation" method="POST" [formGroup]="uploadForm" >
+                            <div class="form-group form-float">
+                                <input type="text" class="form-control" formControlName="name" placeholder="Name" name="name" required>
+                            </div>
+                            <div class="form-group form-float">
+                                <input type="text" class="form-control" formControlName="project" placeholder="Project" name="Project" required>
+                            </div>
+                            <div class="form-group form-float">
+                                <input type="text" class="form-control" formControlName="lot"  placeholder="lot" name="lot" required>
+                            </div>
+                            <div class="form-group form-float">
+                                <input type="number" class="form-control"  formControlName="time" placeholder="desired time (in days)" name="desiredTime" required>
+                            </div>
+                        
+                            <div class="form-group form-float">
+                                <textarea name="description" cols="30" rows="5" formControlName="description"  placeholder="Description" class="form-control no-resize" required></textarea>
+                            </div>
+                            <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" (click)="submit()">SUBMIT</button>
+                        </form>
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h2><strong>File Upload</strong> Drag & Drop OR With Click & Choose  </h2>
+                                  
+                                    </div>
+                                    <div class="body">
+                                        <form action="https://www.wrraptheme.com/" id="frmFileUpload" class="dropzone" method="post" enctype="multipart/form-data">
+                                            <div class="dz-message">
+                                                <div class="drag-icon-cph"> <i class="material-icons">touch_app</i> </div>
+                                                <h3>Drop files here or click to upload.</h3>
+                                                <em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em> </div>
+                                            <div class="fallback">
+                                                <input name="file" type="file" multiple  (change)="onFileSelected($event)" />
+                                               
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Basic Validation --> 
+      
+        <!-- #END# Validation Stats --> 
+    </div>
+    <div class="container-fluid">
+  
+
+    </div>
+</section>

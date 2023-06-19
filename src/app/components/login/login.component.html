@@ -1,0 +1,71 @@
+<div class="authentication" style="background-color: #2c2c2c;">
+    <div class="container">
+        <div class="col-md-12 content-center">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="company_detail">
+                        <h4 class="logo"><img src="assets/images/logo.svg" alt=""> Alpino</h4>
+                        <h3>The ultimate <strong>Bootstrap 4</strong> Admin Dashboard</h3>
+                        <p>Alpino is fully based on HTML5 + CSS3 Standards. Is fully responsive and clean on every device and every browser</p>                        
+                        <div class="footer">
+                            <hr>
+                            <ul>
+                                <li><a href="http://thememakker.com/contact/" target="_blank">Contact Us</a></li>
+                                <li><a href="http://thememakker.com/about/" target="_blank">About Us</a></li>
+                                <li><a href="http://thememakker.com/services/" target="_blank">Services</a></li>
+                               
+                            </ul>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="col-lg-5 col-md-12 offset-lg-1">
+                    <div class="card-plain">
+                        <div class="header">
+                            <h5>Log in</h5>
+                        </div>
+                        <form class="form" [formGroup]="loginForm">
+                            <div class="input-group">
+                                <input type="text" class="form-control" formControlName="userName" placeholder="User Name">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="zmdi zmdi-account-circle"></i></span>
+                                </div>
+                            </div>
+                            <div *ngIf="loginForm.controls['userName'].invalid && (loginForm.controls['userName'].touched || loginForm.controls['userName'].dirty)">
+                                <div *ngIf="loginForm.controls['userName'].errors.required" style="color: red;">
+                                  User Name required
+                             </div>
+                             <div *ngIf="loginForm.controls['userName'].errors.minlength" style="color: red;">
+                                User Name must have at least 3 chars
+                           </div>
+                            </div>
+                            <div class="input-group">
+                                <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="zmdi zmdi-lock"></i></span>
+                                </div>
+                            </div>
+                            <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched || loginForm.controls['password'].dirty)">
+                                <div *ngIf="loginForm.controls['password'].errors.required" style="color: red;">
+                                    Password required
+                             </div>
+                             <div *ngIf="loginForm.controls['password'].errors.minlength" style="color: red;">
+                                Password must have at least 6 chars
+                           </div>
+                           <div *ngIf="loginForm.controls['password'].errors.maxlength" style="color: red;">
+                            Password must have at most 12 chars
+                       </div>
+                            </div>
+                        </form>
+                        <div class="footer">
+                            <a  (click)="login()" [attr.disabled]="loginForm.invalid ? true : null" class="btn btn-primary btn-round btn-block">SIGN IN</a>
+
+                            <a routerLink="/signup"  class="btn btn-primary btn-simple btn-round btn-block">SIGN UP</a>
+                        </div>
+                        <a href="forgot-password.html" class="link">Forgot Password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
