@@ -14,6 +14,7 @@ uploadFiles(files: File[]){
   let formData = new FormData();
   files.forEach(file => {
     formData.append('files', file, file.name);
+    
   });
 return this.http.post<{}>(this.dctUrl,formData);
 

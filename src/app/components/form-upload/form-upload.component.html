@@ -30,7 +30,8 @@
                    
                     </div>
                     <div class="body">
-                        <form id="form_validation" method="POST" [formGroup]="uploadForm" >
+                        <form >
+                            <form  [formGroup]="uploadForm">
                             <div class="form-group form-float">
                                 <input type="text" class="form-control" formControlName="name" placeholder="Name" name="name" required>
                             </div>
@@ -47,9 +48,9 @@
                             <div class="form-group form-float">
                                 <textarea name="description" cols="30" rows="5" formControlName="description"  placeholder="Description" class="form-control no-resize" required></textarea>
                             </div>
-                            <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" (click)="submit()">SUBMIT</button>
-                        </form>
-                        <div class="row clearfix">
+                         
+                          
+                           <div class="row clearfix">
                             <div class="col-sm-12">
                                 <div class="card">
                                     <div class="header">
@@ -72,6 +73,10 @@
                             </div>
                          
                         </div>
+                        <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" (click)="submit()">SUBMIT</button>
+                    </form>    
+                    </form>
+                      
                       
                     </div>
                 </div>

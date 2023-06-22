@@ -6,6 +6,11 @@ const fileSchema = mongoose.Schema({
     mimetype: { type: String, required: true },
     size: { type: Number, required: true },
     createdAt: { type: Date, default: Date.now },
+    name: String,
+    project: String,
+    lot: String,
+    time: Number,
+    description: String,
 
 })
 
